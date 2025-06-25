@@ -28,7 +28,7 @@
 </head>
 <body class="bg-black text-white">
 
-  <!-- ✅ 상단 네비게이션 -->
+  <!-- Navigation -->
   <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 text-sm">
     <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
       <div class="flex gap-6">
@@ -41,26 +41,97 @@
     </div>
   </nav>
 
-  <!-- ✅ 상세 내용 -->
-  <section class="pt-32 pb-20 px-6 max-w-5xl mx-auto animate-fadeIn">
-    <h1 class="text-4xl font-bold mb-8 border-b pb-4">WEATHER MONSTER × 성수동 ‘안개 속 모험’</h1>
-    <img src="project/project_1.png" alt="프로젝트 상세 이미지" class="w-full h-[500px] object-cover rounded-lg shadow-lg mb-8">
-
-    <div class="text-sm text-gray-300 leading-relaxed space-y-4">
-      <p>
-        도시에 안개가 내릴 때, 우리는 그 속을 걷는다.  
-        성수동이라는 도시의 공간 속에서 자연을 상상하게 만드는 순간,  
-        브랜드와 사람의 감성이 이어지는 캠페인을 기획했습니다.
-      </p>
-      <p>
-        ‘실내 속의 바깥’, ‘도시 속 자연’이라는 키워드를 중심으로  
-        소비자에게 새로운 감각과 경험을 전달하고자 했습니다.
-      </p>
-      <p>
-        공간, 콘텐츠, 커뮤니티를 하나로 연결하는  
-        <strong>마케팅의 새로운 방향</strong>을 실험했습니다.
-      </p>
+  <!-- Hero Section with Image + Text -->
+  <section class="pt-32 pb-20 px-6 animate-fadeIn">
+    <div class="flex flex-col md:flex-row max-w-7xl mx-auto items-center gap-10">
+      <div class="w-full md:w-1/2">
+        <img src="project/project_detail_hero.png" alt="Project Hero Image" class="w-full h-auto object-cover rounded-lg shadow-lg">
+      </div>
+      <div class="w-full md:w-1/2 text-left">
+        <h1 class="text-4xl font-bold mb-4">WEATHER MONSTER × 성수동 ‘안개 속 모험’</h1>
+        <p class="text-gray-300">도시에 안개가 내릴 때, 우리는 그 속을 걷는다.<br>감성과 현실 사이, 경계를 걷는 사람들을 위한 캠페인.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="pb-20 px-6 max-w-7xl mx-auto animate-fadeIn">
+    <h2 class="text-2xl font-semibold mb-4">📌 기획 배경 & 캠페인 목적</h2>
+    <p class="text-sm text-gray-300 mb-6">
+      이 프로젝트는 MZ세대를 타겟으로 도심 속 브랜드 체험을 자연스럽게 연결하는 것을 목표로 기획되었습니다.<br>
+      도심 속 실내 공간에 '안개'라는 자연 요소를 도입해, 브랜드의 감성적 메시지를 전달하고자 했습니다.
+    </p>
+    <ul class="list-disc list-inside text-sm text-gray-300 mb-12">
+      <li>브랜드 감성 확산</li>
+      <li>체험 기반의 참여 유도</li>
+      <li>온라인 콘텐츠 연계</li>
+    </ul>
+
+    <h2 class="text-2xl font-semibold mb-4">🧩 주요 구성 요소</h2>
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white text-black p-6 rounded-lg">
+        <h3 class="text-xl font-semibold mb-2">안개실 공간 연출</h3>
+        <p class="text-sm">실제 안개 분사 장비를 활용해 몰입형 공간을 구성</p>
+      </div>
+      <div class="bg-white text-black p-6 rounded-lg">
+        <h3 class="text-xl font-semibold mb-2">참여형 굿즈</h3>
+        <p class="text-sm">안개와 관련된 감각적 아이템 제공 (미스트, 무드 포스터)</p>
+      </div>
+      <div class="bg-white text-black p-6 rounded-lg">
+        <h3 class="text-xl font-semibold mb-2">릴스 콘텐츠 연계</h3>
+        <p class="text-sm">인스타 릴스로 확산되는 브랜디드 콘텐츠 제작</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-4">🏞 공간 시나리오 구성</h2>
+    <p class="text-sm text-gray-300 mb-8">
+      브랜드의 감성을 입체적으로 경험할 수 있도록, 여섯 개의 공간이 순차적으로 이어지는 구조로 설계했습니다.
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-4 mb-10">
+      <div class="bg-white text-black p-4 rounded-lg w-full md:w-1/6 text-center">
+        <h4 class="font-semibold text-sm mb-1">① 입구</h4>
+        <p class="text-xs">‘경계의 문’</p>
+      </div>
+      <div class="bg-white text-black p-4 rounded-lg w-full md:w-1/6 text-center">
+        <h4 class="font-semibold text-sm mb-1">② 경계의 복도</h4>
+        <p class="text-xs">모호한 회색 공간</p>
+      </div>
+      <div class="bg-white text-black p-4 rounded-lg w-full md:w-1/6 text-center">
+        <h4 class="font-semibold text-sm mb-1">③ 감각의 안개실</h4>
+        <p class="text-xs">촉각 + 청각 자극</p>
+      </div>
+      <div class="bg-white text-black p-4 rounded-lg w-full md:w-1/6 text-center">
+        <h4 class="font-semibold text-sm mb-1">④ 개인 탐험실</h4>
+        <p class="text-xs">몰입형 사운드 체험</p>
+      </div>
+      <div class="bg-white text-black p-4 rounded-lg w-full md:w-1/6 text-center">
+        <h4 class="font-semibold text-sm mb-1">⑤ 커뮤니티 스팟</h4>
+        <p class="text-xs">다인 인터랙션</p>
+      </div>
+      <div class="bg-white text-black p-4 rounded-lg w-full md:w-1/6 text-center">
+        <h4 class="font-semibold text-sm mb-1">⑥ 스몰 스토어</h4>
+        <p class="text-xs">굿즈 & 체험존</p>
+      </div>
+    </div>
+
+    <h2 class="text-2xl font-semibold mb-4">📊 성과 (예상 시뮬레이션)</h2>
+    <div class="bg-white text-black p-6 rounded-lg mb-4">
+      <img src="project/result_chart.png" alt="성과 그래프" class="w-full h-auto object-contain">
+    </div>
+    <p class="text-sm text-gray-300 mb-12">
+      캠페인 전후의 SNS 언급량, 방문자 수, 참여율 등의 지표가 유의미하게 증가한 것을 시뮬레이션으로 제시했습니다.<br>
+      특히 릴스 콘텐츠와 연계한 전략이 유입에 결정적인 역할을 했으며,<br>
+      공간 경험 기반의 브랜딩이 감성적 만족도를 높이는 데 효과적이었습니다.
+    </p>
+
+    <h2 class="text-2xl font-semibold mb-4">📝 혜진의 인사이트</h2>
+    <p class="text-sm text-gray-300">
+      이 프로젝트를 기획하면서 가장 중요하게 생각한 건, 사람들이 공간에서 ‘감정’을 느끼는 순간이었습니다.<br>
+      단순한 팝업이 아닌, 브랜드의 세계관을 자연스럽게 경험할 수 있는 구조를 설계하고자 했습니다.<br><br>
+      공간, 콘텐츠, 사람.<br>
+      이 세 가지가 어우러졌을 때 비로소 진짜 마케팅이 완성된다고 느꼈습니다.
+    </p>
   </section>
 
 </body>
