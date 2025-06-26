@@ -24,13 +24,36 @@
     .animate-fadeIn {
       animation: fadeIn 1.5s ease-out both;
     }
-    @keyframes waveMotion {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(8px); }
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
     }
-    .animate-wave {
-      animation: waveMotion 2.5s ease-in-out infinite;
+    .carousel-slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease-in-out;
     }
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.5);
+      color: white;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      z-index: 10;
+    }
+    .prev { left: 20px; }
+    .next { right: 20px; }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -56,88 +79,57 @@
     </div>
   </section>
 
-  <!-- Fullscreen Scroll Gallery -->
-  <section class="w-full">
-    <!-- 기존 3장 + 추가 이미지 22장 = 총 25장 -->
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_1.png" alt="Fishing Scene 1" class="absolute inset-0 w-full h-full object-contain">
+  <!-- Scroll-Locked Carousel Gallery -->
+  <section class="carousel" id="carousel">
+    <div id="slides">
+      <!-- 이미지 순서: fishing_26 ~ 1 (10번, 19번 제외) -->
+      <div class="carousel-slide"><img src="skill/fishing_26.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_25.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_24.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_23.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_22.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_21.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_20.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_18.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_17.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_16.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_15.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_14.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_13.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_12.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_11.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_9.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_8.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_7.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_6.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_5.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_4.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_3.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_2.png"></div>
+      <div class="carousel-slide"><img src="skill/fishing_1.png"></div>
     </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_2.png" alt="Fishing Scene 2" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_3.png" alt="Fishing Scene 3" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <!-- 추가 이미지 반복 -->
-    <!-- fishing_4.png ~ fishing_25.png -->
-    <!-- 혜진이 파일명에 맞춰 이미지 넣어줘야 해 -->
-    <!-- 여백 없는 이미지 갤러리 구성 -->
-    
-    <!-- 반복 추가 -->
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_4.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_5.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_6.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_7.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_8.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_9.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_11.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_12.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_13.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_14.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_15.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_16.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_17.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_18.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_20.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_21.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_22.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_23.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_24.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_25.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
-    <div class="h-screen w-full relative">
-      <img src="skill/fishing_26.png" class="absolute inset-0 w-full h-full object-contain">
-    </div>
+    <div class="carousel-nav prev" onclick="moveSlide(-1)">❮</div>
+    <div class="carousel-nav next" onclick="moveSlide(1)">❯</div>
   </section>
 
+  <script>
+    const slides = document.querySelectorAll('.carousel-slide');
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.style.transform = `translateX(${(i - index) * 100}%)`;
+      });
+    }
+
+    function moveSlide(step) {
+      currentSlide = (currentSlide + step + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    window.addEventListener('load', () => {
+      showSlide(currentSlide);
+    });
+  </script>
 </body>
 </html>
