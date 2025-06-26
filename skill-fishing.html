@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fishing Skill | Hyejin Kang Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav a {
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1.5s ease-out both;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 text-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex gap-6">
+        <a href="index.html#hero">HOME</a>
+        <a href="index.html#collection">SKILL</a>
+        <a href="index.html#project">PROJECT</a>
+        <a href="index.html#culture">CULTURE</a>
+        <a href="index.html#contact">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Fishing Skill Page -->
+  <section class="pt-32 pb-20 px-6 animate-fadeIn">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-4xl font-bold mb-6">🎣 Fishing</h1>
+      <p class="text-gray-300 text-sm mb-12">
+        브랜드 마케팅과 낚시가 통하는 지점은 바로 몰입과 감각. <br>
+        웨더 몬스터를 가장 잘 이해하는 방법은, 자연 속으로 들어가 직접 경험하는 것입니다.
+      </p>
+
+      <!-- Image Card -->
+      <div class="bg-white text-black rounded-lg overflow-hidden shadow-lg">
+        <img src="skill/skill_5_detail.png" alt="Fishing Photo" class="w-full object-cover">
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
