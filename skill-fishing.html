@@ -24,6 +24,15 @@
     .animate-fadeIn {
       animation: fadeIn 1.5s ease-out both;
     }
+
+    /* ✨ 찰랑찰랑 애니메이션 */
+    @keyframes waveMotion {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(8px); }
+    }
+    .animate-wave {
+      animation: waveMotion 2.5s ease-in-out infinite;
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -52,7 +61,7 @@
 
       <!-- Image Card -->
       <div class="bg-white text-black rounded-lg overflow-hidden shadow-lg">
-        <img src="skill/skill_5_detail.png" alt="Fishing Photo" class="w-full object-cover">
+        <img src="skill/skill_5_detail.png" alt="Fishing Photo" class="w-full object-cover animate-wave">
       </div>
     </div>
   </section>
