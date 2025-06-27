@@ -21,39 +21,65 @@
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    .animate-fadeIn {
-      animation: fadeIn 1.5s ease-out both;
+    @keyframes wiggle {
+      0%, 100% {
+        transform: rotate(-2deg);
+      }
+      50% {
+        transform: rotate(2deg);
+      }
     }
-    .carousel {
+    .wiggle-text {
+      animation: wiggle 1.5s infinite ease-in-out;
+      display: inline-block;
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    }
+    .gallery {
       position: relative;
       width: 100%;
       height: 100vh;
       overflow: hidden;
     }
-    .carousel-slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      transition: transform 0.5s ease-in-out;
-    }
-    .carousel img {
+    .gallery img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
-    .carousel-nav {
+    .gallery-controls {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background-color: rgba(0,0,0,0.5);
-      color: white;
-      padding: 10px;
-      cursor: pointer;
-      font-size: 24px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
       z-index: 10;
     }
-    .prev { left: 20px; }
-    .next { right: 20px; }
+    .gallery-controls button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+    }
+    .wave-illustration {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      animation: waveMotion 2s infinite ease-in-out;
+    }
+    @keyframes waveMotion {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(8px);
+      }
+    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -71,65 +97,69 @@
     </div>
   </nav>
 
-  <!-- Hero Fullscreen Image -->
+  <!-- Hero Fullscreen Image with Wiggle Text -->
   <section class="h-screen w-full relative">
     <img src="skill/fishing_hero.png" alt="Fishing Hero Image" class="absolute inset-0 w-full h-full object-cover">
     <div class="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-white">Into the Stillness</h1>
+      <h1 class="wiggle-text">Into the Stillness</h1>
     </div>
+    <img src="skill/fishing_wave.png" alt="Wave Illustration" class="wave-illustration">
   </section>
 
-  <!-- Scroll-Locked Carousel Gallery -->
-  <section class="carousel" id="carousel">
-    <div id="slides">
-      <!-- 이미지 순서: fishing_26 ~ 1 (10번, 19번 제외) -->
-      <div class="carousel-slide"><img src="skill/fishing_26.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_25.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_24.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_23.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_22.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_21.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_20.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_18.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_17.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_16.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_15.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_14.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_13.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_12.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_11.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_9.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_8.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_7.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_6.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_5.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_4.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_3.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_2.png"></div>
-      <div class="carousel-slide"><img src="skill/fishing_1.png"></div>
+  <!-- Scroll-Free Gallery with Controls -->
+  <section class="gallery animate-fadeIn">
+    <div class="gallery-controls">
+      <button onclick="prevImage()">←</button>
+      <button onclick="nextImage()">→</button>
     </div>
-    <div class="carousel-nav prev" onclick="moveSlide(-1)">❮</div>
-    <div class="carousel-nav next" onclick="moveSlide(1)">❯</div>
+    <img id="galleryImage" src="skill/fishing_26.png" alt="Fishing Image">
   </section>
 
   <script>
-    const slides = document.querySelectorAll('.carousel-slide');
-    let currentSlide = 0;
-    
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.style.transform = `translateX(${(i - index) * 100}%)`;
-      });
+    const images = [
+      "skill/fishing_26.png",
+      "skill/fishing_25.png",
+      "skill/fishing_24.png",
+      "skill/fishing_23.png",
+      "skill/fishing_22.png",
+      "skill/fishing_21.png",
+      "skill/fishing_20.png",
+      "skill/fishing_18.png",
+      "skill/fishing_17.png",
+      "skill/fishing_16.png",
+      "skill/fishing_15.png",
+      "skill/fishing_14.png",
+      "skill/fishing_13.png",
+      "skill/fishing_12.png",
+      "skill/fishing_11.png",
+      "skill/fishing_9.png",
+      "skill/fishing_8.png",
+      "skill/fishing_7.png",
+      "skill/fishing_6.png",
+      "skill/fishing_5.png",
+      "skill/fishing_4.png",
+      "skill/fishing_3.png",
+      "skill/fishing_2.png",
+      "skill/fishing_1.png"
+    ];
+
+    let currentIndex = 0;
+    const galleryImage = document.getElementById("galleryImage");
+
+    function showImage(index) {
+      galleryImage.src = images[index];
     }
 
-    function moveSlide(step) {
-      currentSlide = (currentSlide + step + slides.length) % slides.length;
-      showSlide(currentSlide);
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
     }
 
-    window.addEventListener('load', () => {
-      showSlide(currentSlide);
-    });
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
   </script>
+
 </body>
 </html>
