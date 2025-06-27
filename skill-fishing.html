@@ -136,7 +136,11 @@
       showImage(currentIndex);
     }
 
-    // ✅ Drag/Swipe 기능만 DOMContentLoaded로 감싸기
+    // ✅ 버튼 클릭 함수 노출
+    window.nextImage = nextImage;
+    window.prevImage = prevImage;
+
+    // ✅ Drag/Swipe 기능
     document.addEventListener("DOMContentLoaded", function () {
       const gallery = document.getElementById("gallery");
       let startX = 0;
