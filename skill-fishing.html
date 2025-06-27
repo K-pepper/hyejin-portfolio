@@ -77,12 +77,12 @@
   </nav>
 
   <!-- Scroll-Free Gallery with Controls -->
-  <section class="gallery animate-fadeIn mt-24">
+  <section id="gallery" class="gallery animate-fadeIn mt-24">
     <div class="gallery-controls">
       <button onclick="prevImage()">←</button>
       <button onclick="nextImage()">→</button>
     </div>
-    <img id="galleryImage" src="skill/fishing_26.png" alt="Fishing Image">
+    <img id="galleryImage" src="skill/fishing_hero.png" alt="Fishing Image">
   </section>
 
   <!-- 🔁 항상 아래에서 찰랑이는 파도 이미지 -->
@@ -90,10 +90,10 @@
 
   <script>
     const images = [
+      "skill/fishing_hero.png",
       "skill/fishing_26.png",
       "skill/fishing_25.png",
       "skill/fishing_24.png",
-      "skill/fishing_23.png",
       "skill/fishing_22.png",
       "skill/fishing_21.png",
       "skill/fishing_20.png",
@@ -118,6 +118,7 @@
 
     let currentIndex = 0;
     const galleryImage = document.getElementById("galleryImage");
+    const gallery = document.getElementById("gallery");
 
     function showImage(index) {
       galleryImage.src = images[index];
@@ -133,29 +134,28 @@
       showImage(currentIndex);
     }
 
-    // ✅ Drag/Swipe 기능 추가
+    // Drag/Swipe 기능 추가
     let startX = 0;
     let isDragging = false;
 
-    galleryImage.addEventListener("touchstart", (e) => {
+    gallery.addEventListener("touchstart", (e) => {
       startX = e.touches[0].clientX;
       isDragging = true;
     });
 
-    galleryImage.addEventListener("touchend", (e) => {
+    gallery.addEventListener("touchend", (e) => {
       if (!isDragging) return;
       const endX = e.changedTouches[0].clientX;
       handleSwipe(startX, endX);
       isDragging = false;
     });
 
-    galleryImage.addEventListener("mousedown", (e) => {
-      e.preventDefault();
+    gallery.addEventListener("mousedown", (e) => {
       startX = e.clientX;
       isDragging = true;
     });
 
-    galleryImage.addEventListener("mouseup", (e) => {
+    gallery.addEventListener("mouseup", (e) => {
       if (!isDragging) return;
       const endX = e.clientX;
       handleSwipe(startX, endX);
