@@ -21,21 +21,20 @@
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    @keyframes wiggle {
+    @keyframes waveMotion {
       0%, 100% {
-        transform: rotate(-2deg);
+        transform: translateY(0);
       }
       50% {
-        transform: rotate(2deg);
+        transform: translateY(8px);
       }
     }
-    .wiggle-text {
-      animation: wiggle 1.5s infinite ease-in-out;
-      display: inline-block;
-      font-size: 3rem;
-      font-weight: bold;
-      color: white;
-      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    .wave-illustration {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      animation: waveMotion 2s infinite ease-in-out;
     }
     .gallery {
       position: relative;
@@ -65,21 +64,6 @@
       padding: 1rem;
       cursor: pointer;
     }
-    .wave-illustration {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      animation: waveMotion 2s infinite ease-in-out;
-    }
-    @keyframes waveMotion {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(8px);
-      }
-    }
   </style>
 </head>
 <body class="bg-black text-white">
@@ -96,18 +80,23 @@
     </div>
   </nav>
 
+  <!-- Hero Image with Wave -->
+  <section class="h-screen w-full relative">
+    <img src="skill/fishing_hero.png" alt="Fishing Hero Image" class="absolute inset-0 w-full h-full object-cover">
+    <img src="skill/fishing_wave.png" alt="Wave Illustration" class="wave-illustration">
+  </section>
+
   <!-- Scroll-Free Gallery with Controls -->
   <section class="gallery animate-fadeIn">
     <div class="gallery-controls">
       <button onclick="prevImage()">←</button>
       <button onclick="nextImage()">→</button>
     </div>
-    <img id="galleryImage" src="skill/fishing_hero.png" alt="Fishing Image">
+    <img id="galleryImage" src="skill/fishing_26.png" alt="Fishing Image">
   </section>
 
   <script>
     const images = [
-    "skill/fishing_hero.png",
       "skill/fishing_26.png",
       "skill/fishing_25.png",
       "skill/fishing_24.png",
