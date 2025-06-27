@@ -35,6 +35,7 @@
       left: 0;
       width: 100%;
       animation: waveMotion 2s infinite ease-in-out;
+      z-index: 10;
     }
     .gallery {
       position: relative;
@@ -55,7 +56,7 @@
       display: flex;
       justify-content: space-between;
       padding: 0 1rem;
-      z-index: 10;
+      z-index: 20;
     }
     .gallery-controls button {
       background-color: rgba(0, 0, 0, 0.5);
@@ -80,11 +81,10 @@
     </div>
   </nav>
 
-  <!-- Hero Image with Wave -->
-  <section class="h-screen w-full relative">
-    <img src="skill/fishing_hero.png" alt="Fishing Hero Image" class="absolute inset-0 w-full h-full object-cover">
+  <!-- Wave Only (Hero Removed) -->
+  <div class="relative h-24 mt-24">
     <img src="skill/fishing_wave.png" alt="Wave Illustration" class="wave-illustration">
-  </section>
+  </div>
 
   <!-- Scroll-Free Gallery with Controls -->
   <section class="gallery animate-fadeIn">
@@ -97,7 +97,8 @@
 
   <script>
     const images = [
-      "skill/fishing_26.png",
+    "skill/fishing_hero.png",  
+    "skill/fishing_26.png",
       "skill/fishing_25.png",
       "skill/fishing_24.png",
       "skill/fishing_23.png",
