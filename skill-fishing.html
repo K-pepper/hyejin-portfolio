@@ -88,57 +88,57 @@
     <img id="galleryImage" src="skill/fishing_hero.png" alt="Fishing Image">
   </section>
 
-  <!-- 🔁 항상 아래에서 찰랑이는 파도 이미지 -->
+  <!-- 🔁 찰랑이는 파도 -->
   <img src="skill/fishing_wave.png" alt="Wave Illustration" class="fixed bottom-0 left-0 w-full z-40 animate-wave">
 
   <script>
+    const images = [
+      "skill/fishing_hero.png",
+      "skill/fishing_26.png",
+      "skill/fishing_25.png",
+      "skill/fishing_24.png",
+      "skill/fishing_22.png",
+      "skill/fishing_21.png",
+      "skill/fishing_20.png",
+      "skill/fishing_18.png",
+      "skill/fishing_17.png",
+      "skill/fishing_16.png",
+      "skill/fishing_15.png",
+      "skill/fishing_14.png",
+      "skill/fishing_13.png",
+      "skill/fishing_12.png",
+      "skill/fishing_11.png",
+      "skill/fishing_9.png",
+      "skill/fishing_8.png",
+      "skill/fishing_7.png",
+      "skill/fishing_6.png",
+      "skill/fishing_5.png",
+      "skill/fishing_4.png",
+      "skill/fishing_3.png",
+      "skill/fishing_2.png",
+      "skill/fishing_1.png"
+    ];
+
+    let currentIndex = 0;
+    const galleryImage = document.getElementById("galleryImage");
+
+    function showImage(index) {
+      galleryImage.src = images[index];
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    // ✅ Drag/Swipe 기능만 DOMContentLoaded로 감싸기
     document.addEventListener("DOMContentLoaded", function () {
-      const images = [
-        "skill/fishing_hero.png",
-        "skill/fishing_26.png",
-        "skill/fishing_25.png",
-        "skill/fishing_24.png",
-        "skill/fishing_22.png",
-        "skill/fishing_21.png",
-        "skill/fishing_20.png",
-        "skill/fishing_18.png",
-        "skill/fishing_17.png",
-        "skill/fishing_16.png",
-        "skill/fishing_15.png",
-        "skill/fishing_14.png",
-        "skill/fishing_13.png",
-        "skill/fishing_12.png",
-        "skill/fishing_11.png",
-        "skill/fishing_9.png",
-        "skill/fishing_8.png",
-        "skill/fishing_7.png",
-        "skill/fishing_6.png",
-        "skill/fishing_5.png",
-        "skill/fishing_4.png",
-        "skill/fishing_3.png",
-        "skill/fishing_2.png",
-        "skill/fishing_1.png"
-      ];
-
-      let currentIndex = 0;
-      const galleryImage = document.getElementById("galleryImage");
       const gallery = document.getElementById("gallery");
-
-      function showImage(index) {
-        galleryImage.src = images[index];
-      }
-
-      function nextImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-      }
-
-      function prevImage() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-      }
-
-      // Drag/Swipe 기능 추가
       let startX = 0;
       let isDragging = false;
 
@@ -169,17 +169,10 @@
       function handleSwipe(start, end) {
         const delta = start - end;
         if (Math.abs(delta) > 50) {
-          if (delta > 0) {
-            nextImage();
-          } else {
-            prevImage();
-          }
+          if (delta > 0) nextImage();
+          else prevImage();
         }
       }
-
-      // 버튼 함수 연결
-      window.nextImage = nextImage;
-      window.prevImage = prevImage;
     });
   </script>
 
