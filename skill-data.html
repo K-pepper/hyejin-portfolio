@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Analysis & Insights | Hyejin Kang Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav a {
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1.5s ease-out both;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 text-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex gap-6">
+        <a href="index.html#hero">HOME</a>
+        <a href="index.html#collection">SKILL</a>
+        <a href="index.html#project">PROJECT</a>
+        <a href="index.html#contact">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Newsletter Section -->
+  <section class="pt-32 pb-20 px-6 animate-fadeIn">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-4xl font-bold mb-6">📊 Data Analysis & Insights</h1>
+      <p class="text-gray-300 text-sm mb-12">
+        데이터에서 브랜드의 힌트를 읽어내고, 그로부터 마케팅 전략을 도출합니다. 뉴스레터는 이런 인사이트를 실험하고 전하는 공간입니다.
+      </p>
+
+      <!-- Newsletter Cards -->
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white text-black rounded-lg overflow-hidden shadow-lg">
+          <img src="data/newsletter_1.png" alt="Newsletter 1" class="w-full h-64 object-cover">
+          <div class="p-6">
+            <h2 class="text-xl font-bold mb-2">K-Culture, 더 이상 콘텐츠에만 머물지 않는다</h2>
+            <p class="text-sm text-gray-700">브랜드·테크·경험의 영역까지 넘나드는 K컬처의 진화. 지금 가장 빠르게 움직이는 산업의 흐름을 짚어봅니다.</p>
+          </div>
+        </div>
+
+        <!-- 카드가 추가되면 여기에 복붙해서 추가 가능 -->
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
