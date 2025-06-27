@@ -21,21 +21,16 @@
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
-    @keyframes waveMotion {
+    @keyframes wave {
       0%, 100% {
         transform: translateY(0);
       }
       50% {
-        transform: translateY(8px);
+        transform: translateY(6px);
       }
     }
-    .wave-illustration {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      animation: waveMotion 2s infinite ease-in-out;
-      z-index: 10;
+    .animate-wave {
+      animation: wave 2s infinite ease-in-out;
     }
     .gallery {
       position: relative;
@@ -81,13 +76,8 @@
     </div>
   </nav>
 
-  <!-- Wave Only (Hero Removed) -->
-  <div class="relative h-24 mt-24">
-    <img src="skill/fishing_wave.png" alt="Wave Illustration" class="wave-illustration">
-  </div>
-
   <!-- Scroll-Free Gallery with Controls -->
-  <section class="gallery animate-fadeIn">
+  <section class="gallery animate-fadeIn mt-24">
     <div class="gallery-controls">
       <button onclick="prevImage()">←</button>
       <button onclick="nextImage()">→</button>
@@ -95,10 +85,13 @@
     <img id="galleryImage" src="skill/fishing_26.png" alt="Fishing Image">
   </section>
 
+  <!-- 🔁 항상 아래에서 찰랑이는 파도 이미지 -->
+  <img src="skill/fishing_wave.png" alt="Wave Illustration" class="fixed bottom-0 left-0 w-full z-40 animate-wave">
+
   <script>
     const images = [
-    "skill/fishing_hero.png",  
-    "skill/fishing_26.png",
+      "skill/fishing_hero.png",
+      "skill/fishing_26.png",
       "skill/fishing_25.png",
       "skill/fishing_24.png",
       "skill/fishing_23.png",
