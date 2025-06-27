@@ -37,11 +37,13 @@
       width: 100%;
       height: 100vh;
       overflow: hidden;
+      touch-action: pan-y;
     }
     .gallery img {
       width: 100%;
       height: 100%;
       object-fit: contain;
+      user-select: none;
     }
     .gallery-controls {
       position: absolute;
@@ -77,12 +79,12 @@
   </nav>
 
   <!-- Scroll-Free Gallery with Controls -->
-  <section class="gallery animate-fadeIn mt-24">
+  <section class="gallery animate-fadeIn mt-24" id="gallery">
     <div class="gallery-controls">
       <button onclick="prevImage()">←</button>
       <button onclick="nextImage()">→</button>
     </div>
-    <img id="galleryImage" src="skill/fishing_hero.png" alt="Fishing Image">
+    <img id="galleryImage" src="skill/fishing_26.png" alt="Fishing Image">
   </section>
 
   <!-- 🔁 항상 아래에서 찰랑이는 파도 이미지 -->
@@ -132,6 +134,47 @@
     function prevImage() {
       currentIndex = (currentIndex - 1 + images.length) % images.length;
       showImage(currentIndex);
+    }
+
+    // Drag/Swipe 기능 추가
+    let startX = 0;
+    let isDragging = false;
+
+    const gallery = document.getElementById("gallery");
+
+    gallery.addEventListener("touchstart", (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    });
+
+    gallery.addEventListener("touchend", (e) => {
+      if (!isDragging) return;
+      const endX = e.changedTouches[0].clientX;
+      handleSwipe(startX, endX);
+      isDragging = false;
+    });
+
+    gallery.addEventListener("mousedown", (e) => {
+      startX = e.clientX;
+      isDragging = true;
+    });
+
+    gallery.addEventListener("mouseup", (e) => {
+      if (!isDragging) return;
+      const endX = e.clientX;
+      handleSwipe(startX, endX);
+      isDragging = false;
+    });
+
+    function handleSwipe(start, end) {
+      const delta = start - end;
+      if (Math.abs(delta) > 50) {
+        if (delta > 0) {
+          nextImage();
+        } else {
+          prevImage();
+        }
+      }
     }
   </script>
 
