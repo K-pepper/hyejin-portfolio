@@ -3,180 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Fishing Skill | Hyejin Kang Portfolio</title>
+  <title>GoneFishin_J | Fishing Skill</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      scroll-behavior: smooth;
     }
-    nav a {
-      transition: color 0.3s ease;
+    .modal {
+      display: none;
     }
-    nav a:hover {
-      color: #888;
-    }
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: translateY(20px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes wave {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(6px);
-      }
-    }
-    .animate-fadeIn {
-      animation: fadeIn 1s ease-out;
-    }
-    .animate-wave {
-      animation: wave 2s infinite ease-in-out;
-    }
-    .gallery {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-    }
-    .gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-    .gallery-controls {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 100%;
+    .modal.active {
       display: flex;
-      justify-content: space-between;
-      padding: 0 1rem;
-      z-index: 20;
-    }
-    .gallery-controls button {
-      background-color: rgba(0, 0, 0, 0.5);
-      color: white;
-      border: none;
-      padding: 1rem;
-      cursor: pointer;
     }
   </style>
 </head>
-<body class="bg-black text-white">
+<body class="bg-white text-black">
 
-  <!-- Navigation -->
-  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 text-sm">
-    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <div class="flex gap-6">
-        <a href="index.html#hero">HOME</a>
-        <a href="index.html#collection">SKILL</a>
-        <a href="index.html#project">PROJECT</a>
-        <a href="index.html#contact">CONTACT</a>
+  <!-- 프로필 섹션 -->
+  <section class="max-w-3xl mx-auto px-6 py-10">
+    <div class="flex items-center gap-6">
+      <img src="skill/fishing/fishing_profile.jpg" alt="Profile" class="w-24 h-24 rounded-full object-cover">
+      <div>
+        <h1 class="text-2xl font-bold">GoneFishin_J</h1>
+        <p class="text-sm text-gray-500">Branding ideas from the water’s edge.</p>
       </div>
     </div>
-  </nav>
 
-  <!-- Scroll-Free Gallery with Controls -->
-  <section id="gallery" class="gallery animate-fadeIn mt-24">
-    <div class="gallery-controls">
-      <button onclick="prevImage()">←</button>
-      <button onclick="nextImage()">→</button>
+    <!-- 게시글 / 팔로워 / 팔로잉 -->
+    <div class="flex gap-10 text-center mt-6">
+      <div>
+        <p class="text-lg font-bold">24</p>
+        <p class="text-sm text-gray-400">Posts</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">1.8K</p>
+        <p class="text-sm text-gray-400">Followers</p>
+      </div>
+      <div>
+        <p class="text-lg font-bold">375</p>
+        <p class="text-sm text-gray-400">Following</p>
+      </div>
     </div>
-    <img id="galleryImage" src="skill/fishing_hero.png" alt="Fishing Image">
+
+    <!-- 버튼 -->
+    <div class="flex gap-4 justify-center mt-6">
+      <button class="border px-4 py-1 rounded text-sm">Follow</button>
+      <button class="border px-4 py-1 rounded text-sm">Message</button>
+      <button class="border px-4 py-1 rounded text-sm">Email</button>
+    </div>
   </section>
 
-  <!-- 🔁 찰랑이는 파도 -->
-  <img src="skill/fishing_wave.png" alt="Wave Illustration" class="fixed bottom-0 left-0 w-full z-40 animate-wave">
+  <!-- 탭바 -->
+  <div class="flex justify-around border-t border-b py-3 text-gray-600 text-xl">
+    <span>📷</span>
+    <span>🎞️</span>
+    <span>▶️</span>
+    <span>👤</span>
+  </div>
 
-  <<script>
-  const images = [
-    "skill/fishing_hero.png",
-    "skill/fishing_26.png",
-    "skill/fishing_25.png",
-    "skill/fishing_24.png",
-    "skill/fishing_22.png",
-    "skill/fishing_21.png",
-    "skill/fishing_20.png",
-    "skill/fishing_18.png",
-    "skill/fishing_17.png",
-    "skill/fishing_16.png",
-    "skill/fishing_15.png",
-    "skill/fishing_14.png",
-    "skill/fishing_13.png",
-    "skill/fishing_12.png",
-    "skill/fishing_11.png",
-    "skill/fishing_9.png",
-    "skill/fishing_8.png",
-    "skill/fishing_7.png",
-    "skill/fishing_6.png",
-    "skill/fishing_5.png",
-    "skill/fishing_4.png",
-    "skill/fishing_3.png",
-    "skill/fishing_2.png",
-    "skill/fishing_1.png"
-  ];
+  <!-- 피드 섹션 -->
+  <section class="max-w-6xl mx-auto px-4 py-10">
+    <div class="grid grid-cols-3 gap-2">
+      <!-- 이미지 반복 -->
+      <!-- 아래 JS에서 자동 생성됨 -->
+    </div>
+  </section>
 
-  let currentIndex = 0;
-  const galleryImage = document.getElementById("galleryImage");
-  const gallery = document.getElementById("gallery");
+  <!-- 모달 -->
+  <div id="imageModal" class="modal fixed inset-0 bg-black bg-opacity-80 justify-center items-center z-50">
+    <img id="modalImage" src="" alt="Enlarged Image" class="max-w-full max-h-[90vh] rounded shadow">
+  </div>
 
-  function showImage(index) {
-    galleryImage.src = images[index];
-  }
+  <!-- 스크립트 -->
+  <script>
+    const container = document.querySelector('.grid');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
 
-  function nextImage() {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage(currentIndex);
-  }
+    // 이미지 0~23 생성
+    for (let i = 0; i < 24; i++) {
+      const img = document.createElement('img');
+      img.src = `skill/fishing/fishing_${i}.png`;
+      img.alt = `Fishing ${i}`;
+      img.className = 'w-full object-cover cursor-pointer';
+      img.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+      });
+      container.appendChild(img);
+    }
 
-  function prevImage() {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage(currentIndex);
-  }
-
-  // ✅ 모바일 터치 기능
-  let touchStartX = 0;
-  gallery.addEventListener("touchstart", (e) => {
-    touchStartX = e.touches[0].clientX;
-  });
-
-  gallery.addEventListener("touchend", (e) => {
-    const deltaX = e.changedTouches[0].clientX - touchStartX;
-    if (deltaX > 50) prevImage();
-    else if (deltaX < -50) nextImage();
-  });
-
-  // ✅ 웹 마우스 드래그 기능
-  let mouseStartX = 0;
-  let isDragging = false;
-
-  gallery.addEventListener("mousedown", (e) => {
-    mouseStartX = e.clientX;
-    isDragging = true;
-  });
-
-  gallery.addEventListener("mouseup", (e) => {
-    if (!isDragging) return;
-    const mouseEndX = e.clientX;
-    const deltaX = mouseEndX - mouseStartX;
-
-    if (deltaX > 50) prevImage();
-    else if (deltaX < -50) nextImage();
-
-    isDragging = false;
-  });
-
-  // 이미지 처음 보여주기
-  showImage(currentIndex);
-
-  // 버튼 함수 연결
-  window.nextImage = nextImage;
-  window.prevImage = prevImage;
-</script>
-
+    // 모달 닫기
+    modal.addEventListener('click', () => {
+      modal.classList.remove('active');
+      modalImg.src = '';
+    });
+  </script>
 
 </body>
 </html>
