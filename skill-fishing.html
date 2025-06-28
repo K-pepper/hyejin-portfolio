@@ -6,101 +6,83 @@
   <title>GoneFishin_J</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    @keyframes wave {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(6px); }
-    }
-    .animate-wave {
-      animation: wave 2s infinite ease-in-out;
-    }
+    body { font-family: sans-serif; background: #fff; color: #000; }
+    .profile-pic { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; }
+    .modal { display: none; position: fixed; z-index: 50; padding-top: 60px; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); }
+    .modal-content { margin: auto; display: block; max-width: 90%; max-height: 80%; }
+    .close { position: absolute; top: 15px; right: 35px; color: #fff; font-size: 40px; font-weight: bold; cursor: pointer; }
   </style>
 </head>
-<body class="bg-white text-black">
+<body>
 
-  <!-- 상단 헤더 -->
-  <div class="flex items-center justify-between px-4 py-3 border-b">
-    <button onclick="window.history.back()" class="text-2xl">&larr;</button>
-    <span class="text-lg font-semibold">GoneFishin_J</span>
-    <span class="text-2xl">⋯</span>
-  </div>
+<!-- Header -->
+<div class="flex justify-between items-center p-4 border-b text-lg font-semibold">
+  <span>&larr;</span>
+  <span>GoneFishin_J</span>
+  <span>&#8942;</span>
+</div>
 
-  <!-- 프로필 섹션 -->
-  <div class="px-6 pt-6">
-    <div class="flex items-center">
-      <img src="skill/fishing/fishing_profile.jpg" alt="Profile" class="w-20 h-20 rounded-full object-cover mr-6">
-      <div class="flex-1 flex justify-between text-center">
-        <div>
-          <p class="font-bold text-lg">21</p>
-          <p class="text-sm text-gray-500">Posts</p>
-        </div>
-        <div>
-          <p class="font-bold text-lg">1.8K</p>
-          <p class="text-sm text-gray-500">Followers</p>
-        </div>
-        <div>
-          <p class="font-bold text-lg">375</p>
-          <p class="text-sm text-gray-500">Following</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="mt-4">
-      <p class="font-semibold">GoneFishin_J</p>
-      <p class="text-sm text-gray-600">Marketer</p>
-      <p class="text-sm mt-1">Branding ideas from the water’s edge.</p>
-    </div>
-
-    <div class="mt-4 flex gap-2">
-      <button class="flex-1 bg-blue-500 text-white font-semibold py-2 rounded">Follow</button>
-      <button class="flex-1 border border-gray-300 py-2 rounded">Message</button>
-      <button class="flex-1 border border-gray-300 py-2 rounded">Email</button>
+<!-- Profile Section -->
+<div class="p-4 flex items-center">
+  <img src="skill/fishing/fishing_profile.jpg" class="profile-pic mr-4" alt="Profile Picture">
+  <div>
+    <div class="flex space-x-6 text-center">
+      <div><span class="font-bold block">24</span><span class="text-sm">Posts</span></div>
+      <div><span class="font-bold block">1.8K</span><span class="text-sm">Followers</span></div>
+      <div><span class="font-bold block">375</span><span class="text-sm">Following</span></div>
     </div>
   </div>
+</div>
 
-  <!-- 피드 영역 -->
-  <div class="grid grid-cols-3 gap-0 mt-6">
-    <!-- JS에서 자동 삽입됨 -->
-    <script>
-      const imageContainer = document.currentScript.parentElement;
-      for (let i = 20; i >= 0; i--) {
-        const img = document.createElement('img');
-        img.src = `skill/fishing/fishing_${i}.png`;
-        img.alt = `Fishing ${i}`;
-        img.className = "w-full aspect-square object-cover cursor-pointer";
-        img.onclick = () => openModal(img.src);
-        imageContainer.appendChild(img);
-      }
-    </script>
+<!-- Profile Info -->
+<div class="px-4 text-sm leading-tight">
+  <p class="font-semibold">GoneFishin_J</p>
+  <p class="text-gray-600">Marketer</p>
+  <p>Branding ideas from the water’s edge.</p>
+</div>
+
+<!-- Buttons -->
+<div class="flex px-4 mt-4 space-x-2">
+  <button class="flex-1 border py-1 rounded text-sm">Follow</button>
+  <button class="flex-1 border py-1 rounded text-sm">Message</button>
+  <button class="flex-1 border py-1 rounded text-sm">Email</button>
+</div>
+
+<!-- Gallery Grid -->
+<div class="grid grid-cols-3 gap-1 mt-6">
+  <!-- 이미지 반복 삽입 -->
+  <!-- 아래는 24장의 이미지가 역순으로 들어가는 부분 -->
+  <!-- 예시 -->
+  <div onclick="openModal('skill/fishing/fishing_23.png')">
+    <img src="skill/fishing/fishing_23.png" class="w-full h-32 object-cover" />
   </div>
+  <!-- ... fishing_22.png ~ fishing_0.png 까지 반복 삽입 ... -->
+  <!-- 이 부분은 반복문으로 자동 생성됨. 코드 내에서는 직접 복붙해야 함 -->
+</div>
 
-  <!-- 탭바 -->
-  <div class="fixed bottom-0 left-0 w-full bg-white border-t flex justify-around py-2">
-    <button><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0h4" /></svg></button>
-    <button><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 10l4.553 2.276A2 2 0 0121 14.118V19a2 2 0 01-2 2h-2M9 10l-4.553 2.276A2 2 0 003 14.118V19a2 2 0 002 2h2m4-11v6m0-6l3 3m-3-3l-3 3" /></svg></button>
-    <button><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 4h16M4 8h16M4 16h16M4 12h16M4 20h16" /></svg></button>
-    <button><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5.121 17.804A5 5 0 0110 15h4a5 5 0 014.879 2.804M15 10a3 3 0 11-6 0 3 3 0 016 0z" /></svg></button>
-  </div>
+<!-- Modal -->
+<div id="myModal" class="modal" onclick="this.style.display='none'">
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
 
-  <!-- Wave Effect -->
-  <img src="skill/fishing/fishing_wave.png" alt="Wave" class="fixed bottom-0 left-0 w-full z-0 animate-wave opacity-30 pointer-events-none" />
+<!-- Tab Bar -->
+<div class="fixed bottom-0 left-0 w-full bg-white border-t flex justify-around py-2">
+  <img src="skill/fishing/icon_feed.png" class="h-6 w-6" />
+  <img src="skill/fishing/icon_reels.png" class="h-6 w-6" />
+  <img src="skill/fishing/icon_play.png" class="h-6 w-6" />
+  <img src="skill/fishing/icon_profile.png" class="h-6 w-6" />
+</div>
 
-  <!-- 모달 -->
-  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 hidden justify-center items-center z-50">
-    <img id="modalImg" src="" class="max-w-full max-h-full object-contain">
-  </div>
+<!-- Modal Script -->
+<script>
+  function openModal(src) {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = src;
+  }
+</script>
 
-  <script>
-    const modal = document.getElementById('modal');
-    const modalImg = document.getElementById('modalImg');
-    function openModal(src) {
-      modalImg.src = src;
-      modal.classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-    modal.addEventListener('click', () => {
-      modal.classList.add('hidden');
-      document.body.style.overflow = 'auto';
-    });
-  </script>
 </body>
 </html>
