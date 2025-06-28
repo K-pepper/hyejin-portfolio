@@ -2,32 +2,49 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Content Planning & Production</title>
-  <!-- Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav a {
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1.5s ease-out both;
+    }
+  </style>
 </head>
-<body class="bg-[#f8f8f8] text-gray-800 font-sans leading-relaxed tracking-wide">
+<body class="bg-black text-white">
 
-  <!-- ✅ 상단 네비게이션 바 (index.html에서 복사) -->
-  <nav class="bg-white shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-xl font-bold">HYEJIN's Portfolio</a>
-      <ul class="flex space-x-6 text-sm font-medium">
-        <li><a href="index.html#about" class="hover:text-blue-600">ABOUT</a></li>
-        <li><a href="index.html#skill" class="hover:text-blue-600">SKILL</a></li>
-        <li><a href="index.html#project" class="hover:text-blue-600">PROJECT</a></li>
-        <li><a href="index.html#contact" class="hover:text-blue-600">CONTACT</a></li>
-      </ul>
+  <!-- ✅ 네비게이션 -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 text-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex gap-6">
+        <a href="index.html#hero" class="text-white hover:text-gray-300">HOME</a>
+        <a href="index.html#collection" class="text-white hover:text-gray-300">SKILL</a>
+        <a href="index.html#project" class="text-white hover:text-gray-300">PROJECT</a>
+        <a href="index.html#contact" class="text-white hover:text-gray-300">CONTACT</a>
+      </div>
     </div>
   </nav>
 
-  <!-- ✅ 메인 콘텐츠 영역 -->
-  <main class="max-w-4xl mx-auto px-4 py-12">
-
+  <!-- ✅ 콘텐츠 -->
+  <main class="pt-32 max-w-4xl mx-auto px-6 animate-fadeIn">
     <header class="mb-12">
       <h1 class="text-3xl font-bold mb-4">Content Planning & Production</h1>
-      <p class="text-lg text-gray-700">
+      <p class="text-lg text-gray-300">
         기획, 촬영, 편집 등 콘텐츠 제작의 전체 과정에 대한 이해를 바탕으로, 단계별로 실무에 참여한 경험이 있습니다.
         브랜드 콘셉트 도출, 이미지 및 영상 기획안 제작, 현장 촬영과 보정, 쇼츠 편집 등 각 파트에서 실질적인 작업을 수행해왔습니다.
       </p>
@@ -36,7 +53,7 @@
     <!-- 콘텐츠 기획 -->
     <section class="mb-16">
       <h2 class="text-xl font-semibold mb-2">📌 콘텐츠 기획</h2>
-      <p class="mb-4 text-gray-700">
+      <p class="mb-4 text-gray-300">
         공간/브랜드 콘셉트를 시각화하고, 촬영 콘텐츠의 흐름을 기획할 수 있습니다.
       </p>
       <!-- 이미지 삽입 -->
@@ -46,7 +63,7 @@
     <!-- 사진 촬영 및 보정 -->
     <section class="mb-16">
       <h2 class="text-xl font-semibold mb-2">📌 사진 촬영 및 보정</h2>
-      <p class="mb-4 text-gray-700">
+      <p class="mb-4 text-gray-300">
         숙박/푸드/인물 등 다양한 카테고리의 촬영 경험이 있으며, 촬영 후 보정까지 작업합니다.
       </p>
       <!-- 이미지 삽입 -->
@@ -56,13 +73,12 @@
     <!-- 영상 촬영 및 편집 -->
     <section class="mb-16">
       <h2 class="text-xl font-semibold mb-2">📌 영상 촬영 및 편집</h2>
-      <p class="mb-4 text-gray-700">
+      <p class="mb-4 text-gray-300">
         간단한 쇼츠/릴스 콘텐츠 제작이 가능하며, 컷 편집 및 자막 삽입을 할 수 있습니다.
       </p>
       <!-- 이미지 삽입 -->
       <img src="skill/content/content_3.png" alt="영상 촬영 및 편집 예시" class="w-full rounded-lg shadow mb-6">
     </section>
-
   </main>
 
 </body>
