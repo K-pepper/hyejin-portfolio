@@ -17,7 +17,7 @@
 
 <!-- Header -->
 <div class="flex justify-between items-center p-4 border-b text-lg font-semibold">
-  <span onclick="history.back()" class="cursor-pointer">&larr;</span>
+  <span>&larr;</span>
   <span>GoneFishin_J</span>
   <span>&#8942;</span>
 </div>
@@ -26,4 +26,77 @@
 <div class="p-4 flex items-center">
   <img src="skill/fishing/fishing_profile.jpg" class="profile-pic mr-4" alt="Profile Picture">
   <div>
-    <div class="flex space-x-6 tex
+    <div class="flex space-x-6 text-center">
+      <div><span class="font-bold block">24</span><span class="text-sm">Posts</span></div>
+      <div><span class="font-bold block">1.8K</span><span class="text-sm">Followers</span></div>
+      <div><span class="font-bold block">375</span><span class="text-sm">Following</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Profile Info -->
+<div class="px-4 text-sm leading-tight">
+  <p class="font-semibold">GoneFishin_J</p>
+  <p class="text-gray-600">Marketer</p>
+  <p>Branding ideas from the water’s edge.</p>
+</div>
+
+<!-- Buttons -->
+<div class="flex px-4 mt-4 space-x-2">
+  <button class="flex-1 border py-1 rounded text-sm">Follow</button>
+  <button class="flex-1 border py-1 rounded text-sm">Message</button>
+  <button class="flex-1 border py-1 rounded text-sm">Email</button>
+</div>
+
+<!-- 탭바 (중간 아이콘 네 줄) -->
+<div class="flex justify-around items-center mt-4 mb-2 border-b pb-2 px-10">
+  <img src="skill/fishing/icon_feed.png" class="h-6 w-6" alt="feed" />
+  <img src="skill/fishing/icon_reels.png" class="h-6 w-6" alt="reels" />
+  <img src="skill/fishing/icon_play.png" class="h-6 w-6" alt="play" />
+  <img src="skill/fishing/icon_profile.png" class="h-6 w-6" alt="profile" />
+</div>
+
+<!-- Gallery Grid -->
+<div class="grid grid-cols-3 gap-1 px-1">
+  <!-- 이미지 반복 삽입: 역순으로 표시 -->
+  <!-- fishing_23.png ~ fishing_0.png -->
+  <!-- **이미지 삽입** -->
+  <!-- 복붙으로 추가 -->
+  <!-- 예시로 일부만 삽입 -->
+  <script>
+    const galleryContainer = document.currentScript.parentElement;
+    for (let i = 23; i >= 0; i--) {
+      const div = document.createElement('div');
+      div.innerHTML = `<img src="skill/fishing/fishing_${i}.png" class="w-full aspect-square object-cover cursor-pointer" onclick="openModal('skill/fishing/fishing_${i}.png')" />`;
+      galleryContainer.appendChild(div);
+    }
+  </script>
+</div>
+
+<!-- Modal -->
+<div id="myModal" class="modal" onclick="this.style.display='none'">
+  <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<!-- 하단 탭바 (5개 아이콘) -->
+<div class="fixed bottom-0 left-0 w-full bg-white border-t flex justify-around py-2">
+  <img src="skill/fishing/icon_home.png" class="h-6 w-6" alt="home" />
+  <img src="skill/fishing/icon_search.png" class="h-6 w-6" alt="search" />
+  <img src="skill/fishing/icon_reels.png" class="h-6 w-6" alt="reels" />
+  <img src="skill/fishing/icon_bag.png" class="h-6 w-6" alt="bag" />
+  <img src="skill/fishing/icon_profile2.png" class="h-6 w-6" alt="profile" />
+</div>
+
+<!-- Modal Script -->
+<script>
+  function openModal(src) {
+    const modal = document.getElementById("myModal");
+    const modalImg = document.getElementById("modalImage");
+    modal.style.display = "block";
+    modalImg.src = src;
+  }
+</script>
+
+</body>
+</html>
