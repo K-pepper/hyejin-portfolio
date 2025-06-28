@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yanolja 이미지 고도화 프로젝트</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 1.5s ease-out both;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 text-sm">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="flex gap-6">
+        <a href="index.html#hero" class="text-white hover:text-gray-300">HOME</a>
+        <a href="index.html#collection" class="text-white hover:text-gray-300">SKILL</a>
+        <a href="index.html#project" class="text-white hover:text-gray-300">PROJECT</a>
+        <a href="index.html#contact" class="text-white hover:text-gray-300">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="relative h-[60vh] text-white">
+    <!-- 이미지 삽입 -->
+    <img src="project/visuallab_bg.jpg" alt="Visual Lab Desk" class="absolute inset-0 w-full h-full object-cover opacity-50">
+    <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    <div class="relative z-10 flex flex-col justify-center items-center h-full px-4 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Yanolja Visual Lab</h1>
+      <p class="text-lg md:text-xl text-gray-200">이미지 고도화 프로젝트</p>
+    </div>
+  </section>
+
+  <!-- Section 2: 프로젝트 개요 -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-gray-300">
+    <h2 class="text-2xl font-semibold mb-4">Section 2. 프로젝트 개요</h2>
+    <p>
+      야놀자 Visual Lab은 전국의 숙소 이미지를 제작하고 관리하는 팀입니다. 이 프로젝트는 숙소 카테고리별 이미지 퀄리티 편차 문제를 해결하고, 이미지 콘텐츠의 전반적인 품질을 끌어올려 예약율(CTR, CVR)에 긍정적 영향을 주는 것을 목표로 했습니다.
+    </p>
+  </section>
+
+  <!-- Section 3: 내가 한 일 -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-gray-300">
+    <h2 class="text-2xl font-semibold mb-6">Section 3. 내가 한 일</h2>
+    <ul class="list-disc list-inside space-y-4">
+      <li>
+        <strong>프로젝트 리딩 (파트 리더로서)</strong>
+        <ul class="list-disc list-inside ml-5 mt-2 space-y-2 text-gray-400">
+          <li>TF 구성 : 이미지 고도화를 위한 실무 팀원 확보 (촬영 및 편집 담당자)</li>
+          <li>프로젝트 일정 셋업: 예약율에 영향을 줄 수 있는 변수 (주말, 기념일, 연휴 등)를 제외하여 가장 객관적인 데이터를 확보할 수 있는 기간 설정</li>
+          <li>데이터 기반 프로젝트 대상 설정: 지역별 제휴점을 대상으로 사내 예약률, CTR, CVR 데이터를 바탕으로 우선순위 도출<br>
+            <span class="text-gray-500">※ 참고 데이터: 사내 통계 기준 – 지역별 제휴점 예약률, CTR, CVR</span>
+          </li>
+          <li>프로젝트 효과성 확인: 프로젝트 전/후 이미지 데이터를 기반으로 CTR, CVR 지표 변화 분석<br>
+            <span class="text-gray-500">※ 지표 변화는 예약율과 직접 연결되는 핵심 성과로 사용</span>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Section 4: 이미지 비교 설명 -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-gray-300">
+    <h2 class="text-2xl font-semibold mb-4">Section 4. 이미지 개선 전/후 비교</h2>
+    <p class="mb-4 text-sm text-gray-400 italic">
+      ※ 보안상의 이유로 실제 촬영 이미지는 제공하지 않으며, 개선 방향성과 결과는 아래 내용으로 대체합니다.
+    </p>
+    <p>
+      본 프로젝트에서는 이미지 퀄리티 편차를 줄이기 위해 조명, 구도, 후반 보정 기준을 정교화하고, 가이드라인을 표준화했습니다.<br>
+      촬영자 간 결과물 일관성이 향상되었으며, 플랫폼 내 시각적 신뢰도를 높이는 데 기여했습니다.
+    </p>
+  </section>
+
+  <!-- Section 5: 수치 기반 성과 -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-gray-300">
+    <h2 class="text-2xl font-semibold mb-6">Section 5. 수치 기반 성과</h2>
+    <p class="mb-6">
+      개선 이미지를 적용한 후, 각 지역별 제휴점의 CTR과 CVR을 비교 분석했습니다.<br>
+      총 5개 지역에서 1개 업체씩 선정해 테스트하였고, 아래는 교체 전/후의 변화입니다.
+    </p>
+
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm text-left text-gray-300 border border-gray-700">
+        <thead class="text-xs uppercase bg-black text-yellow-300 border-b border-gray-700">
+          <tr>
+            <th class="px-4 py-3">지역</th>
+            <th class="px-4 py-3">CTR 변화</th>
+            <th class="px-4 py-3">CVR 변화</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-800">
+            <td class="px-4 py-3 font-medium">강원 (원주)</td>
+            <td class="px-4 py-3">+14%</td>
+            <td class="px-4 py-3">+10%</td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="px-4 py-3 font-medium">부산 (해운대)</td>
+            <td class="px-4 py-3">+8%</td>
+            <td class="px-4 py-3">+3%</td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="px-4 py-3 font-medium">대구 (동성로)</td>
+            <td class="px-4 py-3">+10%</td>
+            <td class="px-4 py-3">+7%</td>
+          </tr>
+          <tr class="border-b border-gray-800">
+            <td class="px-4 py-3 font-medium">대전</td>
+            <td class="px-4 py-3">+6%</td>
+            <td class="px-4 py-3">+4%</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-medium">광주</td>
+            <td class="px-4 py-3">+5%</td>
+            <td class="px-4 py-3">+3%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="text-sm text-gray-500 italic mt-6">
+      ※ 본 수치는 실제 테스트 당시 흐름을 기반으로 재구성한 추정값입니다.
+    </p>
+  </section>
+
+  <!-- Section 6: 인사이트 -->
+  <section class="py-16 px-6 max-w-4xl mx-auto text-gray-300">
+    <h2 class="text-2xl font-semibold mb-4">Section 6. 프로젝트 인사이트</h2>
+    <p>
+      이번 프로젝트를 통해 '좋은 이미지'란 단순히 예쁘고 잘 찍힌 사진이 아니라,
+      사용자의 선택을 유도하고 브랜드 경험을 향상시키는 전략적인 도구임을 다시 한번 확인할 수 있었습니다.<br><br>
+      콘텐츠 품질을 높이기 위한 시각적 고민뿐 아니라,
+      그 효과를 입증할 수 있는 데이터 기반의 설계와 검증이 함께할 때
+      비로소 마케팅이 기능한다고 생각합니다.
+    </p>
+  </section>
+
+  <!-- Section 7: 마무리 문장 -->
+  <section class="py-10 px-6 max-w-4xl mx-auto text-center">
+    <p class="text-sm text-gray-500 italic">
+      촬영 잘하는 사람은 많지만,<br>
+      성과까지 설계하는 사람은 드뭅니다.
+    </p>
+  </section>
+
+</body>
+</html>
