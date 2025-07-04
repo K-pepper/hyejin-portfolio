@@ -5,13 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>THE CATCH MOMENT 브랜드 캠페인 기획안</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #000;
       color: #fff;
-      scroll-behavior: smooth;
     }
     nav a {
       transition: color 0.3s ease;
@@ -33,36 +32,37 @@
   <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 px-6 py-4 flex justify-between items-center">
     <div class="text-white font-bold text-xl">J_GoneFishin</div>
     <div class="space-x-6 text-white">
-      <a href="index.html">Home</a>
-      <a href="project.html">Projects</a>
-      <a href="skill-data.html">Skills</a>
+      <a href="index.html" class="hover:text-gray-400">Home</a>
+      <a href="project.html" class="hover:text-gray-400">Projects</a>
+      <a href="skill-data.html" class="hover:text-gray-400">Skills</a>
     </div>
   </nav>
 
   <!-- Hero 이미지 및 타이틀 -->
   <section class="pt-24">
-    <img src="project/bm_hero.png" alt="브랜드 캠페인 Hero 이미지" class="w-full object-cover">
+    <img src="project-brand-campaign/bm_hero.png" alt="브랜드 캠페인 Hero 이미지" class="w-full object-cover">
     <div class="text-center mt-6">
-      <h1 class="text-4xl font-bold">THE CATCH MOMENT - 브랜드 캠페인 기획안</h1>
+      <h1 class="text-2xl md:text-3xl font-semibold">THE CATCH MOMENT - 브랜드 캠페인 기획안</h1>
       <!-- **이미지 삽입** -->
-      <img src="project/bm.WM_logo.png" alt="웨더몬스터 로고" class="mx-auto mt-4 w-40">
+      <img src="project-brand-campaign/bm.WM_logo.png" alt="웨더몬스터 로고" class="mx-auto mt-4 w-36">
     </div>
   </section>
 
   <!-- 본문 텍스트 -->
-  <section class="px-6 md:px-20 lg:px-40 mt-12 leading-relaxed text-lg space-y-8">
+  <section class="px-6 md:px-20 lg:px-40 mt-12 text-base space-y-12 leading-relaxed">
     <div>
-      <h2 class="text-2xl font-bold mb-4">이 캠페인을 기획한 이유</h2>
+      <h2 class="text-xl font-medium mb-3">이 캠페인을 기획한 이유</h2>
       <p>
-        낚시는 누군가에게는 몰입이고, 누군가에게는 이야기입니다. <br/>
-        웨더몬스터는 낚시 안에 담긴 감정과 순간들을 이해하고, 함께 공감하는 브랜드이면 좋겠습니다. <br/>
-        다섯 개의 캠페인은 그런 순간들을 감각적으로 담아내고, 낚시인들이 브랜드와 감정을 나누는 연결점이 되기를 바라는 마음으로 기획 했습니다.
+        낚시는 누군가에게는 몰입이고, 누군가에게는 이야기입니다.<br>
+        웨더몬스터는 낚시 안에 담긴 감정과 순간들을 이해하고, 함께 공감하는 브랜드이면 좋겠습니다.<br>
+        다섯 개의 캠페인은 그런 순간들을 감각적으로 담아내고,<br>
+        낚시인들이 브랜드와 감정을 나누는 연결점이 되기를 바라는 마음으로 기획 했습니다.
       </p>
     </div>
 
     <div>
-      <h2 class="text-2xl font-bold mb-4">웨더몬스터의 시선</h2>
-      <ul class="list-disc pl-5 space-y-2">
+      <h2 class="text-xl font-medium mb-3">웨더몬스터의 시선</h2>
+      <ul class="list-disc pl-5 space-y-1">
         <li>우리는 낚시라는 행위 안에서 감각과 집중, 신념 그리고 그것을 통해 이야기를 발견한다.</li>
         <li>웨더몬스터는 이러한 감각적 요소를 제품에 담고, 브랜드 콘텐츠로 풀어낸다.</li>
         <li>그 감각에 공감한 사람들이 하나의 커뮤니티를 형성할 수 있다.</li>
@@ -71,7 +71,7 @@
 
     <!-- 캠페인 구성 표 -->
     <div>
-      <h2 class="text-2xl font-bold mb-4">THE CATCH MOMENT - 구성</h2>
+      <h2 class="text-xl font-medium mb-3">THE CATCH MOMENT - 구성</h2>
       <div class="overflow-x-auto">
         <table class="w-full text-sm">
           <thead>
@@ -112,101 +112,99 @@
       </div>
     </div>
   </section>
-<!-- 캠페인 카드 섹션 -->
-<section class="px-6 md:px-20 lg:px-40 mt-20">
-  <h2 class="text-2xl font-bold mb-6">THE CATCH MOMENT 리스트</h2>
 
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-    <!-- 카드 1 -->
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(1)">
-      <img src="project/campaign_01_thumb.png" alt="캠페인 1 썸네일" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-2">THE CATCH MOMENT - 시작의 리듬</h3>
-        <p class="text-sm text-gray-600">“당신의 낚시는 어디서, 어떻게 시작되나요?”</p>
+  <!-- 캠페인 카드 섹션 -->
+  <section class="px-6 md:px-20 lg:px-40 mt-20">
+    <h2 class="text-xl font-medium mb-6">THE CATCH MOMENT 리스트</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- 카드 1 -->
+      <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(1)">
+        <img src="project/campaign_01_thumb.png" alt="캠페인 1 썸네일" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-base mb-1">THE CATCH MOMENT - 시작의 리듬</h3>
+          <p class="text-sm text-gray-600">“당신의 낚시는 어디서, 어떻게 시작되나요?”</p>
+        </div>
+      </div>
+
+      <!-- 카드 2 -->
+      <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(2)">
+        <img src="project/campaign_02_thumb.png" alt="캠페인 2 썸네일" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-base mb-1">THE CATCH MOMENT - 낚시인의 손</h3>
+          <p class="text-sm text-gray-600">“처음 릴을 잡던 그날의 손, 낚시를 사랑하게 된 순간의 손을 보여주세요.”</p>
+        </div>
+      </div>
+
+      <!-- 카드 3 -->
+      <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(3)">
+        <img src="project/campaign_03_thumb.png" alt="캠페인 3 썸네일" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-base mb-1">THE CATCH MOMENT - Before the Hit. 긴장은 계속된다</h3>
+          <p class="text-sm text-gray-600">“오늘도 꽝쳤나요? 그럼 당신은 이 캠페인의 주인공입니다.”</p>
+        </div>
+      </div>
+
+      <!-- 카드 4 -->
+      <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(4)">
+        <img src="project/campaign_04_thumb.png" alt="캠페인 4 썸네일" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-base mb-1">THE CATCH MOMENT - 들리는 낚시</h3>
+          <p class="text-sm text-gray-600">“눈보다 귀가 먼저 반응한 순간, 당신만의 낚시를 들려주세요.”</p>
+        </div>
+      </div>
+
+      <!-- 카드 5 -->
+      <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(5)">
+        <img src="project/campaign_05_thumb.png" alt="캠페인 5 썸네일" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-semibold text-base mb-1">THE CATCH MOMENT - 용왕의 자식</h3>
+          <p class="text-sm text-gray-600">“오늘 조과, 혼자 보기 아깝지 않나요?”</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- 카드 2 -->
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(2)">
-      <img src="project/campaign_02_thumb.png" alt="캠페인 2 썸네일" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-2">THE CATCH MOMENT - 낚시인의 손</h3>
-        <p class="text-sm text-gray-600">“처음 릴을 잡던 그날의 손, 낚시를 사랑하게 된 순간의 손을 보여주세요.”</p>
-      </div>
+  <!-- 모달 (공통) -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
+    <div class="bg-white text-black rounded-lg max-w-3xl w-full p-6 relative">
+      <button onclick="closeModal()" class="absolute top-3 right-4 text-2xl">&times;</button>
+      <img id="modalImage" src="" alt="캠페인 상세 이미지" class="w-full rounded mb-4">
+      <p id="modalDesc" class="text-gray-700 text-sm"></p>
     </div>
-
-    <!-- 카드 3 -->
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(2)">
-      <img src="project/campaign_02_thumb.png" alt="캠페인 2 썸네일" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-2">THE CATCH MOMENT - Before the Hit. 긴장은 계속된다</h3>
-        <p class="text-sm text-gray-600">“오늘도 꽝쳤나요? 그럼 당신은 이 캠페인의 주인공입니다.”</p>
-      </div>
-    </div>
-
-        <!-- 카드 4 -->
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(2)">
-      <img src="project/campaign_02_thumb.png" alt="캠페인 2 썸네일" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-2">THE CATCH MOMENT - 들리는 낚시</h3>
-        <p class="text-sm text-gray-600">“눈보다 귀가 먼저 반응한 순간, 당신만의 낚시를 들려주세요.”</p>
-      </div>
-    </div>
-
-        <!-- 카드 5 -->
-    <div class="bg-white text-black rounded-lg shadow-lg overflow-hidden cursor-pointer" onclick="openModal(2)">
-      <img src="project/campaign_02_thumb.png" alt="캠페인 2 썸네일" class="w-full h-48 object-cover">
-      <div class="p-4">
-        <h3 class="font-bold text-lg mb-2">THE CATCH MOMENT - 용왕의 자식</h3>
-        <p class="text-sm text-gray-600">“오늘 조과, 혼자 보기 아깝지 않나요?”</p>
-      </div>
-    </div>
-
   </div>
-</section>
 
-<!-- 모달 (공통) -->
-<div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50">
-  <div class="bg-white text-black rounded-lg max-w-3xl w-full p-6 relative">
-    <button onclick="closeModal()" class="absolute top-3 right-4 text-2xl">&times;</button>
-    <img id="modalImage" src="" alt="캠페인 상세 이미지" class="w-full rounded mb-4">
-    <p id="modalDesc" class="text-gray-700 text-sm"></p>
-  </div>
-</div>
+  <script>
+    const modal = document.getElementById("modal");
+    const modalImage = document.getElementById("modalImage");
+    const modalDesc = document.getElementById("modalDesc");
 
-<script>
-  const modal = document.getElementById("modal");
-  const modalImage = document.getElementById("modalImage");
-  const modalDesc = document.getElementById("modalDesc");
+    function openModal(index) {
+      const images = {
+        1: "project/campaign_01.png",
+        2: "project/campaign_02.png",
+        3: "project/campaign_03.png",
+        4: "project/campaign_04.png",
+        5: "project/campaign_05.png"
+      };
 
-  function openModal(index) {
-    const images = {
-      1: "project/campaign_01.png",
-      2: "project/campaign_02.png",
-      3: "project/campaign_03.png",
-      4: "project/campaign_04.png",
-      5: "project/campaign_05.png"
-    };
+      const descriptions = {
+        1: "‘손끝의 루틴’은 낚시인들의 손을 통해 순간의 집중과 감각을 보여주는 캠페인입니다.",
+        2: "‘시작의 리듬’은 루틴 영상 챌린지를 통해 낚시 전 감각적 준비를 공유합니다.",
+        3: "‘고요 속의 집중’은 히트 전의 고요한 집중을 포착합니다.",
+        4: "‘들리는 낚시’는 낚시 순간의 소리와 감정을 ASMR로 표현합니다.",
+        5: "‘용왕의 자식’은 낚시인의 이야기와 전설, 미신을 통해 감정을 나눕니다."
+      };
 
-    const descriptions = {
-      1: "‘손끝의 루틴’은 낚시인들의 손을 통해 순간의 집중과 감각을 보여주는 캠페인입니다.",
-      2: "‘시작의 리듬’은 루틴 영상 챌린지를 통해 낚시 전 감각적 준비를 공유합니다.",
-      3: "‘고요 속의 집중’은 히트 전의 고요한 집중을 포착합니다.",
-      4: "‘들리는 낚시’는 낚시 순간의 소리와 감정을 ASMR로 표현합니다.",
-      5: "‘용왕의 자식’은 낚시인의 이야기와 전설, 미신을 통해 감정을 나눕니다."
-    };
+      modalImage.src = images[index];
+      modalDesc.innerText = descriptions[index];
+      modal.classList.remove("hidden");
+    }
 
-    modalImage.src = images[index];
-    modalDesc.innerText = descriptions[index];
-    modal.classList.remove("hidden");
-  }
-
-  function closeModal() {
-    modal.classList.add("hidden");
-  }
-</script>
-
-  
+    function closeModal() {
+      modal.classList.add("hidden");
+    }
+  </script>
 
 </body>
 </html>
