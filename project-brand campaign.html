@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>브랜드 캠페인 기획안</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #000;
+      color: #fff;
+      scroll-behavior: smooth;
+    }
+    nav a {
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #888;
+    }
+    table, th, td {
+      border: 1px solid #fff;
+      border-collapse: collapse;
+      padding: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 상단 네비게이션 바 -->
+  <nav class="fixed top-0 left-0 w-full bg-black bg-opacity-70 z-50 px-6 py-4 flex justify-between items-center">
+    <div class="text-white font-bold text-xl">J_GoneFishin</div>
+    <div class="space-x-6 text-white">
+      <a href="index.html">Home</a>
+      <a href="project.html">Projects</a>
+      <a href="skill-data.html">Skills</a>
+    </div>
+  </nav>
+
+  <!-- Hero 이미지 및 타이틀 -->
+  <section class="pt-24">
+    <img src="project/bm_hero.png" alt="브랜드 캠페인 Hero 이미지" class="w-full object-cover">
+    <div class="text-center mt-6">
+      <h1 class="text-4xl font-bold">브랜드 캠페인 기획안</h1>
+      <!-- **이미지 삽입** -->
+      <img src="project/bm.WM_logo.png" alt="웨더몬스터 로고" class="mx-auto mt-4 w-40">
+    </div>
+  </section>
+
+  <!-- 본문 텍스트 -->
+  <section class="px-6 md:px-20 lg:px-40 mt-12 leading-relaxed text-lg space-y-8">
+    <div>
+      <h2 class="text-2xl font-bold mb-4">이 캠페인을 기획한 이유</h2>
+      <p>
+        낚시는 누군가에게는 몰입이고, 누군가에게는 이야기입니다. <br/>
+        웨더몬스터는 낚시 안에 담긴 감정과 순간들을 이해하고, 함께 공감하는 브랜드이면 좋겠습니다. <br/>
+        다섯 개의 캠페인은 그런 순간들을 감각적으로 담아내고, 낚시인들이 브랜드와 감정을 나누는 연결점이 되기를 바라는 마음으로 기획 했습니다.
+      </p>
+    </div>
+
+    <div>
+      <h2 class="text-2xl font-bold mb-4">웨더몬스터의 시선</h2>
+      <ul class="list-disc pl-5 space-y-2">
+        <li>우리는 낚시라는 행위 안에서 감각과 집중, 신념 그리고 그것을 통해 이야기를 발견한다.</li>
+        <li>웨더몬스터는 이러한 감각적 요소를 제품에 담고, 브랜드 콘텐츠로 풀어낸다.</li>
+        <li>그 감각에 공감한 사람들이 하나의 커뮤니티를 형성할 수 있다.</li>
+      </ul>
+    </div>
+
+    <!-- 캠페인 구성 표 -->
+    <div>
+      <h2 class="text-2xl font-bold mb-4">캠페인 구성</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr>
+              <th class="font-bold">손끝의 루틴</th>
+              <th>낚시인의 손</th>
+              <th>낚시의 시작과 끝 : 손</th>
+              <th>손 사진 + 사연 공모</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>시작의 리듬</td>
+              <td>리듬, 낚시의 언어</td>
+              <td>루틴 영상 챌린지</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th class="font-bold">고요 속의 집중</th>
+              <td>Before the Hit</td>
+              <td>낚시는 기다림의 예술</td>
+              <td>Before the Hit 릴, 표정 포토</td>
+            </tr>
+            <tr>
+              <td>들리는 낚시</td>
+              <td>소리로 기억되는 순간</td>
+              <td>나만의 낚시 ASMR 공유</td>
+              <td></td>
+            </tr>
+            <tr>
+              <th class="font-bold">낚시의 이야기</th>
+              <td>용왕의 자식</td>
+              <td>낚시는 전설이 된다</td>
+              <td>낚시 스토리, 미신 공유 캠페인</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 캠페인별 PPT 이미지 영역 -->
+  <section class="px-6 md:px-20 lg:px-40 mt-20 space-y-16">
+    <!-- 캠페인 1 -->
+    <div>
+      <img src="project/campaign_01.png" alt="캠페인 이미지 1" class="w-full rounded-xl shadow-xl">
+      <!-- **이미지 삽입** -->
+    </div>
+    <!-- 캠페인 2 -->
+    <div>
+      <img src="project/campaign_02.png" alt="캠페인 이미지 2" class="w-full rounded-xl shadow-xl">
+      <!-- **이미지 삽입** -->
+    </div>
+    <!-- 캠페인 3 -->
+    <div>
+      <img src="project/campaign_03.png" alt="캠페인 이미지 3" class="w-full rounded-xl shadow-xl">
+      <!-- **이미지 삽입** -->
+    </div>
+    <!-- 추가 캠페인 이미지도 동일한 방식으로 삽입 가능 -->
+  </section>
+
+</body>
+</html>
