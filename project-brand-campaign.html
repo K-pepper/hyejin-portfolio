@@ -172,36 +172,64 @@
   </div>
 
   <script>
-    const modal = document.getElementById("modal");
-    const modalImage = document.getElementById("modalImage");
-    const modalDesc = document.getElementById("modalDesc");
+  const modal = document.getElementById("modal");
+  const modalImage = document.getElementById("modalImage");
+  const modalDesc = document.getElementById("modalDesc");
 
-    function openModal(index) {
-      const images = {
-        1: "project/campaign_01.png",
-        2: "project/campaign_02.png",
-        3: "project/campaign_03.png",
-        4: "project/campaign_04.png",
-        5: "project/campaign_05.png"
-      };
+  function openModal(index) {
+    const images = {
+      1: "project/campaign_01.png",
+      2: "project/campaign_02.png",
+      3: "project/campaign_03.png",
+      4: "project/campaign_04.png",
+      5: "project/campaign_05.png"
+    };
 
-      const descriptions = {
-        1: "‘손끝의 루틴’은 낚시인들의 손을 통해 순간의 집중과 감각을 보여주는 캠페인입니다.",
-        2: "‘시작의 리듬’은 루틴 영상 챌린지를 통해 낚시 전 감각적 준비를 공유합니다.",
-        3: "‘고요 속의 집중’은 히트 전의 고요한 집중을 포착합니다.",
-        4: "‘들리는 낚시’는 낚시 순간의 소리와 감정을 ASMR로 표현합니다.",
-        5: "‘용왕의 자식’은 낚시인의 이야기와 전설, 미신을 통해 감정을 나눕니다."
-      };
+    const descriptions = {
+      1: `
+<b>THE CATCH MOMENT - 시작의 리듬</b><br><br>
+<b>콘셉트:</b> 출조 전 반복되는 루틴은 나만의 박자다. 루틴은 장비와 몸이 만들어내는 무언의 템포다.<br><br>
+<b>핵심 메시지:</b><br>
+“당신의 낚시는 어디서, 어떻게 시작되나요?”<br><br>
+당신만의 출조 준비 루틴을 영상으로 보여주세요. 웨더몬스터가 여러분의 리듬을 발견하고 소개합니다.<br><br>
+<b>유저 참여 방식:</b><br>
+● 출조 준비 루틴을 콘텐츠로 만들어본다<br>
+&nbsp;&nbsp;&nbsp;○ 내 채비 가방 정리하는 모습<br>
+&nbsp;&nbsp;&nbsp;○ 옷 입는 손동작<br>
+&nbsp;&nbsp;&nbsp;○ 릴 세팅, 포인트 도착 컷 등<br>
+&nbsp;&nbsp;&nbsp;○ 정적이고 반복적인 루틴 영상<br><br>
+● 스마트폰으로 짧은 영상 촬영 (릴스/숏폼)<br>
+&nbsp;&nbsp;&nbsp;○ 리듬감 있는 편집 or 무편집도 OK<br>
+&nbsp;&nbsp;&nbsp;○ 자막 없이 ‘움직임만으로 전달’도 가능<br><br>
+● 지정 해시태그 달기<br>
+&nbsp;&nbsp;&nbsp;#시작의리듬 #출조루틴 #낚시브이로그<br><br>
+● 개인 SNS 업로드<br>
+&nbsp;&nbsp;&nbsp;○ 인스타그램, 유튜브 쇼츠 등 자유롭게<br>
+&nbsp;&nbsp;&nbsp;○ 브랜드 참여폼 있다면 링크로도 접수 가능<br><br>
+<b>활용 제품 예시:</b><br>
+• WM 시그니처 3WAY 더플백<br>
+• WM 익스퍼트 X-PAC 메신저백<br><br>
+<b>브랜드 리워드:</b><br>
+• 브랜드 공식 계정 큐레이션 피드에 소개<br>
+• 추천 or 선정 기반의 웨더몬스터 키트 증정<br><br>
+<b>브랜드 역할:</b><br>
+• 물일을 만드는 패턴을 기록하는 브랜드 → 루틴의 미학 전달
+      `,
+      2: "‘시작의 리듬’은 루틴 영상 챌린지를 통해 낚시 전 감각적 준비를 공유합니다.",
+      3: "‘고요 속의 집중’은 히트 전의 고요한 집중을 포착합니다.",
+      4: "‘들리는 낚시’는 낚시 순간의 소리와 감정을 ASMR로 표현합니다.",
+      5: "‘용왕의 자식’은 낚시인의 이야기와 전설, 미신을 통해 감정을 나눕니다."
+    };
 
-      modalImage.src = images[index];
-      modalDesc.innerText = descriptions[index];
-      modal.classList.remove("hidden");
-    }
+    modalImage.src = images[index];
+    modalDesc.innerHTML = descriptions[index]; // ✅ 여기 중요!
+    modal.classList.remove("hidden");
+  }
 
-    function closeModal() {
-      modal.classList.add("hidden");
-    }
-  </script>
+  function closeModal() {
+    modal.classList.add("hidden");
+  }
+</script>
 
 </body>
 </html>
